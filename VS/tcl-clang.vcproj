@@ -168,6 +168,19 @@
 			UniqueIdentifier="{4FC737F1-C7A5-4376-A066-2A32D752A2FF}"
 			>
 			<File
+				RelativePath="..\clang.i"
+				>
+				<FileConfiguration
+					Name="Debug|Win32"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+						CommandLine="swig -o $(InputDir)clang_wrap.c -tcl -namespace -prefix clang::raw -Fmicrosoft $(InputPath)"
+						Outputs="$(InputDir)clang_wrap.c"
+					/>
+				</FileConfiguration>
+			</File>
+			<File
 				RelativePath="..\clang_wrap.c"
 				>
 			</File>

@@ -1,3 +1,4 @@
+clang_wrap.c
 *.ncb
 *.suo
 *.vcproj.*.user
