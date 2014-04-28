@@ -60,6 +60,7 @@
 			<Tool
 				Name="VCLinkerTool"
 				AdditionalDependencies="$(ProjectDir)..\tcl84-res\tclstub84.lib $(ProjectDir)..\clang3.3_march2013\lib\libclang.lib"
+				OutputFile="$(OutDir)\clang.dll"
 				GenerateDebugInformation="true"
 				TargetMachine="1"
 			/>
@@ -131,6 +132,7 @@
 			<Tool
 				Name="VCLinkerTool"
 				AdditionalDependencies="$(ProjectDir)..\tcl84-res\tclstub84.lib $(ProjectDir)..\clang3.3_march2013\lib\libclang.lib"
+				OutputFile="$(OutDir)\clang.dll"
 				GenerateDebugInformation="true"
 				OptimizeReferences="2"
 				EnableCOMDATFolding="2"
@@ -175,7 +177,16 @@
 					>
 					<Tool
 						Name="VCCustomBuildTool"
-						CommandLine="swig -o $(InputDir)clang_wrap.c -tcl -namespace -prefix clang::raw -Fmicrosoft $(InputPath)"
+						CommandLine="swig -o $(InputDir)clang_wrap.c -tcl -nosafe -pkgversion 1.0 -namespace -prefix clang::raw -Fmicrosoft $(InputPath)"
+						Outputs="$(InputDir)clang_wrap.c"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Release|Win32"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+						CommandLine="swig -o $(InputDir)clang_wrap.c -tcl -nosafe -pkgversion 1.0 -namespace -prefix clang::raw -Fmicrosoft $(InputPath)"
 						Outputs="$(InputDir)clang_wrap.c"
 					/>
 				</FileConfiguration>
