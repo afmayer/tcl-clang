@@ -29,6 +29,13 @@
 }
 %apply char ** clang_command_line_args {char ** command_line_args, char ** filePaths};
 
+// convert CXString returned by some functions into a Tcl string
+// and automatically dispose the string
+%typemap(out) CXString  {
+    Tcl_SetResult(interp, (char *)clang_getCString($1), TCL_VOLATILE);
+    clang_disposeString($1);
+}
+
 %include "../clang3.3_march2013/include/clang-c/Platform.h"
 %include "../clang3.3_march2013/include/clang-c/CXString.h"
 %include "../clang3.3_march2013/include/clang-c/Index.h"
