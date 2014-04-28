@@ -177,7 +177,7 @@
 					>
 					<Tool
 						Name="VCCustomBuildTool"
-						CommandLine="swig -o $(InputDir)clang_wrap.c -tcl -nosafe -pkgversion 1.0 -namespace -prefix clang::raw -Fmicrosoft $(InputPath)"
+						CommandLine="swig -o $(InputDir)clang_wrap.c -tcl -nosafe -pkgversion 0.1 -namespace -prefix clang::raw -Fmicrosoft $(InputPath)&#x0D;&#x0A;"
 						Outputs="$(InputDir)clang_wrap.c"
 					/>
 				</FileConfiguration>
@@ -186,7 +186,7 @@
 					>
 					<Tool
 						Name="VCCustomBuildTool"
-						CommandLine="swig -o $(InputDir)clang_wrap.c -tcl -nosafe -pkgversion 1.0 -namespace -prefix clang::raw -Fmicrosoft $(InputPath)"
+						CommandLine="swig -o $(InputDir)clang_wrap.c -tcl -nosafe -pkgversion 0.1 -namespace -prefix clang::raw -Fmicrosoft $(InputPath)"
 						Outputs="$(InputDir)clang_wrap.c"
 					/>
 				</FileConfiguration>
