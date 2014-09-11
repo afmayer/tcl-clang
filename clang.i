@@ -31,7 +31,7 @@
 
 // convert CXString returned by some functions into a Tcl string
 // and automatically dispose the string
-%typemap(out) CXString  {
+%typemap(out) CXString {
     Tcl_SetResult(interp, (char *)clang_getCString($1), TCL_VOLATILE);
     clang_disposeString($1);
 }
